@@ -128,11 +128,27 @@ contains(names, 'Colt', result => {
   Hint: you can use a nested for loop to do this.
 */
 
-// CODE HERE
+// CODE HERE\
 
-function uniq(names, callback){
-  
-}
+// ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'] = I 
+// ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'] = J
+
+
+// function uniq(arr, callback){
+// for(let i = 0; i < arr.length; i++){
+//   for(let j = i + 1; j < arr.length; j++){
+//     if(arr[i] === arr[j]){
+//       arr.splice(j, 1)
+//       j--
+//     } 
+//   } 
+// } return callback(arr)
+// }
+
+
+
+
+
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
@@ -141,6 +157,12 @@ function uniq(names, callback){
 */
 
 // CODE HERE
+
+function uniqCb(arr){
+  return `The new names array with all the duplucated items removed is ${arr}`
+}
+
+// console.log(uniq(names, uniqCb))
 
 
 
@@ -151,8 +173,14 @@ function uniq(names, callback){
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-// CODE HERE 
+console.log('==================')
 
+// CODE HERE 
+function each(arr, callback){
+  for(let i = 0; i < arr.length; i++){
+    console.log(callback(arr[i], i))
+  }
+}
 
 /*
   Invoke the each function, passing in the names array and a callback function.
@@ -163,7 +191,12 @@ function uniq(names, callback){
 
 // CODE HERE
 
+function newEach(item, index){
+ return `The item at index ${index} is ${item}`
+}
 
+
+console.log(each(names, newEach))
 
 
 
